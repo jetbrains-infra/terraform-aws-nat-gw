@@ -1,3 +1,3 @@
 output "route_table_id" {
-  value = "${aws_route_table.nat.id}"
+  value = aws_route_table.nat.id
 }
