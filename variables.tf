@@ -6,10 +6,6 @@ variable "name" {
   description = "Name of NAT GW"
 }
 
-variable "project" {
-  description = "Project tag"
-}
-
 data "aws_subnet" "nat" {
   id = local.subnet_id
 }
@@ -17,6 +13,5 @@ data "aws_subnet" "nat" {
 locals {
   subnet_id = var.subnet_id
   vpc_id    = data.aws_subnet.nat.vpc_id
-  project   = var.project
   name      = var.name
 }

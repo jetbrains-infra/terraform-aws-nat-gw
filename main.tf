@@ -16,6 +16,5 @@ resource "aws_route_table" "nat" {
 
   tags = {
     Name    = local.name
-    Project = local.project
   }
 }
