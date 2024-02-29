@@ -1,9 +1,15 @@
 resource "aws_eip" "nat" {
+  tags = {
+    Name = local.name
+  }
 }
 
 resource "aws_nat_gateway" "default" {
   allocation_id = aws_eip.nat.id
   subnet_id     = local.subnet_id
+  tags = {
+    Name = local.name
+  }
 }
 
 resource "aws_route_table" "nat" {
